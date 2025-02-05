@@ -17,9 +17,10 @@ apt -y update
 apt install -y python3.13
 curl -sSL https://bootstrap.pypa.io/get-pip.py | python3.13
 apt install python3.13-venv
-python3.13 -m venv myenv
-source myenv/bin/activate
+python3.13 -m venv venv
+source venv/bin/activate
 pip3.13 install -r requirements.txt
+deactivate
 ```
 
 3. Put your bot token and chat's id to files/credentials.py
