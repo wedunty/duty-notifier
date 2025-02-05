@@ -33,13 +33,11 @@ async def send_daily_notification():
             await bot.send_message(CHAT_ID, f"<blockquote>{current_attendant}</blockquote>")
             await asyncio.sleep(60)
         await asyncio.sleep(1)
-    # await asyncio.sleep(1)
 
 async def main():
     asyncio.create_task(send_daily_notification())
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
-    # asyncio.create_task(send_daily_notification())
 
 if __name__ == "__main__":
     asyncio.run(main())
