@@ -42,8 +42,8 @@ deactivate
   
     - Type the following:
       ```
-      current_attendant - {description} (This command will show you the current duty officer and his deputy)
-      week_attendants - {description} (This command will show you the duty officers and their deputies for the current week)
+      current_attendant - {description} # This command will show you the current duty officer and his deputy
+      week_attendants - {description} # This command will show you the duty officers and their deputies for the current week
       ```
 
 ---
