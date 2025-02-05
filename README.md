@@ -30,6 +30,22 @@ deactivate
 
 4. Run deploy script: `bash deploy.sh`
 
+5. Giving the bot access to messages
+    - Type /mybots in chat with @BotFather and select a bot
+
+    - Press "Bot Settings" --> "Group Privacy"
+
+    - Press "Turn off"
+  
+6. Adding a list of commands
+    - Type /setcommands in chat with @BotFather and select a bot
+  
+    - Type the following:
+      ```
+      current_attendant - {description} (This command will show you the current duty officer and his deputy)
+      week_attendants - {description} (This command will show you the duty officers and their deputies for the current week)
+      ```
+
 ---
 
 ### Tips
