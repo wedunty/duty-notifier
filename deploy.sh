@@ -8,9 +8,9 @@ After=network.target
 
 [Service]
 WorkingDirectory=/opt/duty-notifier
-ExecStart=/opt/duty-notifier/myenv/bin/python3.13 /opt/duty-notifier/main.py
-ExecReload=/opt/duty-notifier/myenv/bin/python3.13 /opt/duty-notifier/main.py
-ExecRestart=/opt/duty-notifier/myenv/bin/python3.13 /opt/duty-notifier/main.py
+ExecStart=/opt/duty-notifier/venv/bin/python3.13 /opt/duty-notifier/main.py
+ExecReload=/opt/duty-notifier/venv/bin/python3.13 /opt/duty-notifier/main.py
+ExecRestart=/opt/duty-notifier/venv/bin/python3.13 /opt/duty-notifier/main.py
 
 [Install]
 WantedBy=multi-user.target
