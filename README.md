@@ -13,8 +13,8 @@ cd duty-notifier/
 
 ```
 add-apt-repository ppa:deadsnakes/ppa
-apt update
-apt install python3.13
+apt -y update
+apt install -y python3.13
 curl -sSL https://bootstrap.pypa.io/get-pip.py | python3.13
 apt install python3.13-venv
 python3.13 -m venv myenv
