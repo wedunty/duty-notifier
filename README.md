@@ -1,5 +1,8 @@
 ## Duty notifier
 
+### Warning
+Works with the sample table at the path files/attendants_teable.txt
+
 ### Installation
 1. Download to /opt folder: 
 
