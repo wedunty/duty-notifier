@@ -1,7 +1,7 @@
 ## Duty notifier
 
 ### Warning
-Works with the sample table at the path files/attendants_teable.txt
+Works with the sample table at the path files/attendants_teable.txt without empty lines
 
 ### Installation
 1. Download to /opt folder: 
@@ -17,9 +17,8 @@ cd duty-notifier/
 ```
 add-apt-repository ppa:deadsnakes/ppa
 apt -y update
-apt install -y python3.13
+apt install -y python3.13 python3.13-venv
 curl -sSL https://bootstrap.pypa.io/get-pip.py | python3.13
-apt install python3.13-venv
 python3.13 -m venv venv
 source venv/bin/activate
 pip3.13 install -r requirements.txt
@@ -28,16 +27,14 @@ deactivate
 
 3. Put your bot token and chat's id to files/credentials.py
 
-4. Run deploy script: `bash deploy.sh`
-
-5. Giving the bot access to messages
+4. Giving the bot access to messages
     - Type /mybots in chat with @BotFather and select a bot
 
     - Press "Bot Settings" --> "Group Privacy"
 
     - Press "Turn off"
   
-6. Adding a list of commands
+5. Adding a list of commands
     - Type /setcommands in chat with @BotFather and select a bot
   
     - Type the following:
@@ -45,6 +42,8 @@ deactivate
       current_attendant - {description} # This command will show you the current duty officer and his deputy
       week_attendants - {description} # This command will show you the duty officers and their deputies for the current week
       ```
+      
+6. Run deploy script: `bash deploy.sh`
 
 ---
 
