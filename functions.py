@@ -23,12 +23,20 @@ def get_week_attendants_list(week_dates, attendants):
     week_attendants = ""
     for date in week_dates:
         if date in attendants.keys():
-            week_attendants += f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>, <b>резервный дежурный</b> - {attendants[date]["reserve_attendant"]}\n\n"
+            if attendants[date].values() == 2:
+                week_attendants += f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>, <b>резервный дежурный</b> - {attendants[date]["reserve_attendant"]}\n\n"
+            else:
+                week_attendants += f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>\n\n"
         else:
             break
     return week_attendants
 
 def get_current_attendant(attendants):
     date = datetime.today().strftime("%d.%m.%Y")
-    current_attendant = f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>, <b>резервный дежурный</b> - {attendants[date]["reserve_attendant"]}"
+    if attendants[date].values() == 2:
+        current_attendant = f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>, <b>резервный дежурный</b> - {attendants[date]["reserve_attendant"]}\n\n"
+    else:
+        current_attendant = f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.today() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>\n\n"
     return current_attendant
+
+print(get_attendants_list())
