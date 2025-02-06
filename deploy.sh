@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat <<EOF > /lib/systemd/system/duty_notifier.service
+cat <<EOF > /etc/systemd/system/duty_notifier.service
 
 [Unit]
 Description=Telegram duty notifier
