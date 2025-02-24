@@ -1,2 +1,2 @@
 BOT_TOKEN = ""
-CHAT_ID = ""
+GROUPS_ID = {}

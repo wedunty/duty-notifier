@@ -7,6 +7,7 @@ from aiogram.client.default import DefaultBotProperties
 from datetime import datetime
 import functions
 from files.credentials import *
+from functions import get_key
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(
@@ -17,20 +18,23 @@ dp = Dispatcher()
 
 @dp.message(Command("week_attendants"))
 async def week_attendants(message: types.Message):
-    week_attendants =  functions.get_week_attendants_list(functions.get_current_week_dates(), functions.get_attendants_list())
-    await message.answer(f"<blockquote>{week_attendants}</blockquote>")
+    label = get_key(GROUPS_ID, str(message.chat.id))
+    week_attendants =  functions.get_week_attendants_list(functions.get_current_week_dates(), functions.get_attendants_list(label))
+    await bot.send_message(message.chat.id, f"<blockquote>{week_attendants}</blockquote>")
 
 @dp.message(Command("current_attendant"))
 async def current_attendant(message: types.Message):
-    current_attendant = functions.get_current_attendant(functions.get_attendants_list())
-    await message.answer(f"<blockquote>{current_attendant}</blockquote>")
+    label = get_key(GROUPS_ID, str(message.chat.id))
+    current_attendant = functions.get_current_attendant(functions.get_attendants_list(label))
+    await bot.send_message(message.chat.id, f"<blockquote>{current_attendant}</blockquote>")
 
 async def send_daily_notification():
     while True:
         today_hour, today_minute = datetime.today().hour, datetime.today().minute
-        if today_hour == 18 and today_minute == 00:
-            current_attendant = functions.get_current_attendant(functions.get_attendants_list())
-            await bot.send_message(CHAT_ID, f"<blockquote>{current_attendant}</blockquote>")
+        if today_hour == 22 and today_minute == 52:
+            for label, id in GROUPS_ID.items():
+                current_attendant = functions.get_current_attendant(functions.get_attendants_list(label))
+                await bot.send_message(id, f"<blockquote>{current_attendant}</blockquote>")
             await asyncio.sleep(60)
         await asyncio.sleep(1)
 

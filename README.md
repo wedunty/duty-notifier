@@ -25,7 +25,20 @@ pip3.13 install -r requirements.txt
 deactivate
 ```
 
-3. Put your bot token and chat's id to files/credentials.py
+3. Configuring the bot
+    - Open files/credentials.py
+    - Put your bot's token and group/groups id like this:
+      ```
+      BOT_TOKEN = "0123456789:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      GROUPS_ID = {"1'st": "xxxxxxxxxxxx",
+                   "2'nd": "xxxxxxxxxxxx",
+                   "3'rd": "xxxxxxxxxxxx",
+                   "4'th": "xxxxxxxxxxxx"
+                   }
+      ```
+    - Open files/tables
+    - Add as many tables as you need (in the same format as the sample table).
+    - Each table must begin with what you have specified as the key to the group ID for which the table is intended
 
 4. Giving the bot access to messages
     - Type /mybots in chat with @BotFather and select a bot
