@@ -38,12 +38,6 @@ def get_current_attendant(attendants):
     else:
         current_attendant = f"<u><b>{date}</b></u>: <b>дежурный</b> - {attendants[date]["attendant"]} с <b>18:00</b> до <b>{(datetime.strptime(date, "%d.%m.%Y").date() + timedelta(days=1)).strftime("%d.%m.%Y")} 9:00</b>\n\n"
     return current_attendant
-<<<<<<< HEAD
 
 def get_key(dict, value):
     return list(dict.keys())[list(dict.values()).index(value)]
-
-
-=======
-
->>>>>>> ccaedf7c771c997a5c166bafbbd3e98eef5861ec
