@@ -7,7 +7,6 @@ from aiogram.client.default import DefaultBotProperties
 from datetime import datetime
 import functions
 from files.credentials import *
-from functions import get_key
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(
@@ -18,13 +17,13 @@ dp = Dispatcher()
 
 @dp.message(Command("week_attendants"))
 async def week_attendants(message: types.Message):
-    label = get_key(GROUPS_ID, str(message.chat.id))
+    label = functions.get_key(GROUPS_ID, str(message.chat.id))
     week_attendants =  functions.get_week_attendants_list(functions.get_current_week_dates(), functions.get_attendants_list(label))
     await bot.send_message(message.chat.id, f"<blockquote>{week_attendants}</blockquote>")
 
 @dp.message(Command("current_attendant"))
 async def current_attendant(message: types.Message):
-    label = get_key(GROUPS_ID, str(message.chat.id))
+    label = functions.get_key(GROUPS_ID, str(message.chat.id))
     current_attendant = functions.get_current_attendant(functions.get_attendants_list(label))
     await bot.send_message(message.chat.id, f"<blockquote>{current_attendant}</blockquote>")
 
