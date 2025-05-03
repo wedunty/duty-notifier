@@ -19,7 +19,7 @@ Works with the sample table at the path files/1'st_table.txt without empty lines
 2. Configuring the bot:
     - Open .env file.
 
-    - Put your bot's token, group/groups id and timezone like this:
+    - Put your bot's token, group(s) id and timezone like this:
       ```
       BOT_TOKEN=0123456789:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       GROUPS_ID={"1'st": "xxxxxxxxxxxx",
@@ -52,8 +52,8 @@ Works with the sample table at the path files/1'st_table.txt without empty lines
 
 5. Bot startup:
     - Go to project directory: `cd /opt/duty-notifier`
-    - Creating an image: `docker build -t {name of your image} .`
-    - Starting the image: `docker run --env-file .env -v ./files/tables:/duty-notifier/files/tables --name {name of your container} {name of your image}`
+    - Create an image: `docker build -t {name of your image} .`
+    - Start the image: `docker run --env-file .env -v ./files/tables:/duty-notifier/files/tables --name {name of your container} {name of your image}`
 
 ---
 
