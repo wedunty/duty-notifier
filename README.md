@@ -22,10 +22,7 @@ Works with the sample table at the path files/1'st_table.txt without empty lines
     - Put your bot's token, group(s) id and timezone like this:
       ```
       BOT_TOKEN=0123456789:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      GROUPS_ID={"1'st": "xxxxxxxxxxxx",
-                 "2'nd": "xxxxxxxxxxxx",
-                 "3'rd": "xxxxxxxxxxxx",
-                 "4'th": "xxxxxxxxxxxx"}
+      GROUPS_ID={"1'st": "xxxxxxxxxxxx", "2'nd": "xxxxxxxxxxxx", "3'rd": "xxxxxxxxxxxx", "4'th": "xxxxxxxxxxxx"}
       TZ=your_continent/your_city
       ```
     - Open files/tables.

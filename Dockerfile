@@ -6,6 +6,6 @@ RUN apk cache clean
 
 COPY . /duty-notifier/
 WORKDIR /duty_notifier
-RUN python -m venv venv && source venv/bin/activate && curl -sSL https://bootstrap.pypa.io/get-pip.py | python && pip install --no-cache -r ./requirements.txt && deactivate
+RUN python -m venv venv && source venv/bin/activate && curl -sSL https://bootstrap.pypa.io/get-pip.py | python && pip install --no-cache -r requirements.txt && deactivate
 
 CMD ["venv/bin/python", "main.py"]    
