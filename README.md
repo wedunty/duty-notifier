@@ -5,7 +5,7 @@
 - docker
 
 ### Warning
-Works with the sample table at the path files/1'st_table.txt without empty lines
+Works with the sample table at the path files/tables/1'st_table.txt without empty lines
 
 ### Installation
 1. Download to /opt folder: 
