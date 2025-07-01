@@ -70,7 +70,7 @@ Duty Notifier Bot sends automated notifications about duty schedules and work sh
     - Create an image: 
     ```docker build -t {name of your image} .```
     - Start the image: 
-    ```docker run -d --env-file .env -v ./files/tables:/duty-notifier/files/tables --name {name of your container} {name of your image}```
+    ```docker run -d --env-file .env -v ./files/tables:/duty_notifier/files/tables --name {name of your container} {name of your image}```
 
 6. After that files/tables folder will be synced with docker container and all you'll have to do is replace the tables in this folder in a timely manner.
 
